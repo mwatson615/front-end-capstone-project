@@ -7,8 +7,25 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body ng-app="superlativeApp">
-	<h1>Welcome to Superlative</h1>
-	
+
+	<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <a class="navbar-brand brand" href="#">Superlative</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    	<div class="navbar-right">
+			      	<ul class="nav navbar-nav">
+			        	<li role="presentation"><a href="#/">Home<span class="sr-only">(current)</span></a></li>
+			        	<li role="presentation"><a href="#/myposts">My Posts<span class="sr-only">(current)</span></a></li>
+			        	<li role="presentation"><a href="#">Create Post<span class="sr-only">(current)</span></a>
+			   		</ul>
+				</div>
+			</div>
+	</nav>		
+
 	<div ng-view></div>
 
 	<script src="/bower_components/angular/angular.min.js"></script>

@@ -14,6 +14,10 @@ const app = angular.module('superlativeApp', ['ngRoute'])
 			controller: 'MyPostsCtrl',
 			templateUrl: 'partials/myposts.html'
 		})
+		.when('/create', {
+			controller: 'CreateCtrl',
+			templateUrl: 'partials/createmodal.html'
+		})
 		.otherwise({
 			redirectTo: '/'
 		})

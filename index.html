@@ -12,21 +12,22 @@
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
-		      <a class="navbar-brand brand" href="#">Superlative</a>
+		      <a class="navbar-brand brand">Superlative</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    	<div class="navbar-right">
-			      	<ul class="nav navbar-nav">
-			        	<li role="presentation"><a href="#/">Home<span class="sr-only">(current)</span></a></li>
-			        	<li role="presentation"><a href="#/myposts">My Posts<span class="sr-only">(current)</span></a></li>
-			        	<li role="presentation"><a href="#">Create Post<span class="sr-only">(current)</span></a>
-			   		</ul>
+			      	<ul class="nav nav-pills nav-justified">
+						  <li role="presentation" class="active"><a href="#/">Log In/Register</a></li>
+						  <li role="presentation"><a href="#/myposts">My Posts</a></li>
+						  <li role="presentation"><a href="#/create">Create Posts</a></li>
+						</ul>
 				</div>
 			</div>
-	</nav>		
+	</nav>
 
-	<div ng-view></div>
+	<div class="container-fluid" ng-view>
+	</div>
 
 	<script src="/bower_components/angular/angular.min.js"></script>
 	<script src="/bower_components/angular-route/angular-route.min.js"></script>
@@ -34,5 +35,6 @@
 	<script src="/app/app.js"></script>
 	<script src="/controllers/home.js"></script>
 	<script src="/controllers/myposts.js"></script>
+	<script src="/controllers/createmodal.js"></script>
 </body>
 </html>

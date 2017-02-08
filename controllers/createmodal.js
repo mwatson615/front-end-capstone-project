@@ -9,6 +9,7 @@ app.controller('CreateCtrl', function($scope, contentFactory) {
 			"name" : $scope.name,
 			"imgUrl" : $scope.imgUrl,
 			"counter" : 1,
+			"thingType" : $scope.thingType
 			// "userName" :
 		}
 		// console.log("hi")

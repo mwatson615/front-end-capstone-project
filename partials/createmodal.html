@@ -1,11 +1,16 @@
 <h1>create</h1>
 
 <div class="input-group">
+	<select ng-model="thingType">
+		<option>People</option>
+		<option>Place</option>
+		<option>Thing</option>
+	</select><br>
 	<select ng-model="superlative">
 		<option>Greatest</option>
 		<option>Worst</option>
 	</select>
-	<input type="text" class="form-control" ng-model="category" placeholder="Guitarist, Lizard, Type of cloud...">
+	<input type="text" class="form-control" ng-model="category" placeholder="Guitarist, Lizard, City...">
 	<input type="text" ng-model="name" class="form-control" placeholder="Name...">
 	<!-- <img src="{{imgUrl}}"> -->
 	<input ng-model="imgUrl" type="text" class="form-control" placeholder="Give an image Url...">

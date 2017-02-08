@@ -30,20 +30,20 @@
 	<!-- browse ppl places things -->
 	<div class="btn-group" role="group" aria-label="...">
 		<p>Browse</p><br>
-		  <button type="button" class="btn btn-default">People</button>
-		  <button type="button" class="btn btn-default">Places</button>
-		  <button type="button" class="btn btn-default">Things</button>
+		  <button ng-click="determineType('People')" type="button" class="btn btn-default">People</button>
+		  <button ng-click="determineType('Place')" type="button" class="btn btn-default">Places</button>
+		  <button ng-click="determineType('Thing')" type="button" class="btn btn-default">Things</button>
 	</div>
 
 <!-- posts -->
 	<div class="row">
-	  <div class="col-sm-6 col-md-9" ng-repeat="post in posts">
+	  <div class="col-sm-6 col-md-9" ng-repeat="post in contentArray" ng-if="determineType(post.thingType)">
 	    <div class="thumbnail">
-	      <img src="post.imgUrl" alt="...">
+	      <img ng-src="{{post.imgUrl}}" alt="{{post.name}}">
 	      <div class="caption">
 	        <h3>{{post.superlative}} {{post.category}}</h3>
 	        <p>{{post.name}}</p>
-	        <p><a href="#" class="btn btn-default btn-sm glyphicon glyphicon-thumbs-up" role="button"></a> <a href="#" class="btn btn-default btn-sm glyphicon glyphicon-thumbs-down" role="button"></a></p>
+	        <p><a href="#" class="btn btn-default btn-sm glyphicon glyphicon-thumbs-up" role="button"></a></p>
 	      </div>
 	    </div>
 	  </div>

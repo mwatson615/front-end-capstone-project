@@ -13,23 +13,27 @@ app.controller('HomeCtrl', function($scope, contentFactory) {
 		}
 		console.log($scope.contentArray)
 	})
-	$scope.browseFilter = true;
-	$scope.filterByType = function(type) {
-		// browseFilter is variable for all browse
-		$scope.browseFilter = type;
-		// if (type === 'people')
-		// 	return 
-	console.log(type)
+	// $scope.browseFilter = true;
+	// $scope.filterByType = function(type) {
+	// 	// browseFilter is variable for all browse
+	// 	$scope.browseFilter = type;
+	// 	// if (type === 'people')
+	// 	// 	return 
+	// console.log(type)
+	// }
+	$scope.isType = function() {
+
 	}
 
 	$scope.determineType = function(type) {
-		if (type === 'People') {
-			return true;
-		} else if (type === 'Place') {
-			return true;
-		} else if (type === 'Thing') {
-			return true;
-		}
+		$scope.isType = type;
+		// if (type === 'People') {
+		// 	$scope.isType
+		// } else if (type === 'Place') {
+		// 	return 'Place';
+		// } else if (type === 'Thing') {
+		// 	return;
+		// }
 	}
 
 })

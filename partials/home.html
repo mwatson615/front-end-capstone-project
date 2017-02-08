@@ -23,21 +23,20 @@
 
 <!-- search bar -->
 	<div class="input-group col-xs-3">
-		  <span class="input-group-addon" id="basic-addon1">@</span>
-		  <input type="text" class="form-control" placeholder="Search..." aria-describedby="basic-addon1">
+		  <input ng-model="searchInput" type="text" class="form-control" placeholder="Search..." aria-describedby="basic-addon1">
 	</div>
 
 	<!-- browse ppl places things -->
-	<div class="btn-group" role="group" aria-label="...">
+	<!-- <div class="btn-group" role="group" aria-label="...">
 		<p>Browse</p><br>
 		  <button ng-click="determineType('People')" type="button" class="btn btn-default">People</button>
 		  <button ng-click="determineType('Place')" type="button" class="btn btn-default">Places</button>
 		  <button ng-click="determineType('Thing')" type="button" class="btn btn-default">Things</button>
-	</div>
+	</div> -->
 
 <!-- posts -->
 	<div class="row">
-	  <div class="col-sm-6 col-md-9" ng-repeat="post in contentArray" ng-if="determineType(post.thingType)">
+	  <div class="col-sm-6 col-md-9" ng-repeat="post in contentArray | filter: {$:searchInput}">
 	    <div class="thumbnail">
 	      <img ng-src="{{post.imgUrl}}" alt="{{post.name}}">
 	      <div class="caption">

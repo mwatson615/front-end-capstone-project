@@ -1,6 +1,13 @@
 console.log("create modal")
 
-app.controller('CreateCtrl', function($scope, contentFactory) {
+app.controller('CreateCtrl', function($scope, contentFactory, authFactory) {
+
+	authFactory.getUserId()
+	.then((response) => {
+		// console.log(response.displayName)
+	$scope.userName = response.displayName
+	// $scope.userEmail = response.email
+	})
 
 	$scope.createPost = () => {
 		let newPost = {
@@ -9,8 +16,9 @@ app.controller('CreateCtrl', function($scope, contentFactory) {
 			"name" : $scope.name,
 			"imgUrl" : $scope.imgUrl,
 			"counter" : 1,
-			"thingType" : $scope.thingType
-			// "userName" :
+			"thingType" : $scope.thingType,
+			"userName" : $scope.userName,
+			"description" : ""
 		}
 		// console.log("hi")
 		contentFactory.createPost(newPost)

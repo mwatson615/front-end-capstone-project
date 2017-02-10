@@ -7,32 +7,37 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body ng-app="superlativeApp">
+	<div class="container-fluid">
 
-	<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header">
-		      <a class="navbar-brand brand">Superlative</a>
-		    </div>
+		<nav class="navbar navbar-default">
+			  <!-- <div class="container-fluid"> -->
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <a class="navbar-brand brand">Superlative</a>
+			      <button>Sign In</button>
+			      <button>Sign Out</button>
+			      <h2>{{userName}}</h2>
+			    </div>
 
-		    <!-- Collect the nav links, forms, and other content for toggling -->
-		    	<div class="navbar-right">
-			      	<ul class="nav nav-pills nav-justified">
-						  <li role="presentation" class="active"><a href="#/">Log In/Register</a></li>
-						  <li role="presentation"><a href="#/myposts">My Posts</a></li>
-						  <li role="presentation"><a href="#/create">Create Posts</a></li>
-						</ul>
-				</div>
-			</div>
-	</nav>
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    	<div class="navbar-right">
+				      	<ul class="nav nav-pills nav-justified">
+							  <li role="presentation" class="active"><a href="#/">Log In/Register</a></li>
+							  <li role="presentation"><a href="#/myposts">My Posts</a></li>
+							  <li role="presentation"><a href="#/create">Create Posts</a></li>
+							</ul>
+					</div>
+				<!-- </div> -->
+		</nav>
 
-	<div class="container-fluid" ng-view>
+		<div ng-view>
+		</div>
 	</div>
-
 	<script src="/bower_components/angular/angular.min.js"></script>
 	<script src="/bower_components/angular-route/angular-route.min.js"></script>
 	<script src="/bower_components/firebase/firebase.js"></script>
 	<script src="/app/app.js"></script>
+	<script src="/factories/authFactory.js"></script>
 	<script src="/factories/contentfactory.js"></script>
 	<script src="/controllers/home.js"></script>
 	<script src="/controllers/myposts.js"></script>

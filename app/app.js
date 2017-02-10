@@ -15,11 +15,23 @@ const app = angular.module('superlativeApp', ['ngRoute'])
 	$routeProvider
 	.when('/', {
 		controller: 'HomeCtrl',
-		templateUrl: 'partials/home.html'
+		templateUrl: 'partials/home.html',
+		resolve: {
+			user (authFactory, $location) {
+				return authFactory.getUserId()
+				.catch(() => $location.url('/'))
+			}
+		}
 	})
 	.when('/myposts', {
 		controller: 'MyPostsCtrl',
-		templateUrl: 'partials/myposts.html'
+		templateUrl: 'partials/myposts.html',
+		resolve: {
+			user (authFactory, $location) {
+				return authFactory.getUserId()
+				.catch(() => $location.url('/'))
+			}
+		}
 	})
 	.when('/create', {
 		controller: 'CreateCtrl',

@@ -62,7 +62,8 @@
 	      <div class="caption">
 	        <h3>{{post.superlative}} {{post.category}}</h3>
 	        <p>{{post.name}}</p>
-	        <p><a href="#" class="btn btn-default btn-sm glyphicon glyphicon-thumbs-up" role="button"></a></p>
+	        <button ng-click="vote(post)" class="btn btn-default btn-sm glyphicon glyphicon-thumbs-up" role="button"></button>
+	        <h5>{{post.counter}}</h5>
 	      </div>
 	    </div>
 	  </div>

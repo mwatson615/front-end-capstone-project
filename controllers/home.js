@@ -1,6 +1,6 @@
 // console.log('home ctrl')
 
-app.controller('HomeCtrl', function($scope, contentFactory, authFactory) {
+app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) {
 
 	$scope.login = () => {
 		authFactory.login($scope.logEmail, $scope.logPassword)
@@ -53,6 +53,20 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory) {
 		}
 		// console.log($scope.posts)
 	})
+
+	$scope.vote = (post) => {
+		post.counter++
+		// console.log("voting")
+		let postId;
+
+
+		for (key in $scope.posts) {
+			if ($scope.posts[key] === post) {
+				postId = key
+			}
+		}
+		$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/counter.json`, post.counter)
+	}
 	// $scope.browseFilter = true;
 	// $scope.filterByType = function(type) {
 	// 	// browseFilter is variable for all browse

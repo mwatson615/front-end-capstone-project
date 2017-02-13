@@ -55,25 +55,34 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 			$scope.contentArray.push($scope.posts[key])
 			$scope.voteArray.push($scope.posts[key].hasVoted)
 		}
-		console.log($scope.voteArray)
+		// console.log($scope.voteArray)
 	})
 
 	$scope.vote = (post) => {
-		// for (key in $scope.posts) {
-		// 	if ($scope.posts[key].hasVoted === false)
-		// }
-		// 	$scope.$scope.post[key].hasVoted
-			post.counter++
-			console.log($scope.displayName)
-			let postId;
-
-
-			for (key in $scope.posts) {
-				if ($scope.posts[key] === post) {
+		let postId;
+		for (key in $scope.posts) {
+			if ($scope.posts[key] === post) {
 					postId = key
+			// console.log($scope.posts[key].hasVoted)
 				}
-			}
+		}
+			if (post.hasVoted === $scope.displayName) {
+				console.log("you already voted")
+			} else {
+			post.counter++
 			$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/counter.json`, post.counter)
+			$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/hasVoted.json`, post.hasVoted)
+			console.log(post.hasVoted)
+			}
+			// post.hasVoted += $scope.userName
+			// console.log($scope.displayName)
+
+
+
+			// for (key in $scope.posts) {
+			// 	if ($scope.posts[key] === post) {
+			// 		postId = key
+			// 	}
 		}
 		// let hasVoted = true;
 	// $scope.browseFilter = true;

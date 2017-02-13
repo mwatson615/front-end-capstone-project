@@ -23,32 +23,41 @@
 
 
 <!-- Login/register Modal -->
-<!-- <div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Log In / Register</h4>
       </div>
       <div class="modal-body">
-        <! login -->
-			<!-- <div class="input-group">
+        <!-- <! login -->
+			<div class="input-group">
 			 	<p>Login</p>
 			  <input type="text" ng-model="logEmail" class="form-control" placeholder="Email..." aria-describedby="basic-addon1">
 			  <input type="text" ng-model="logPassword" class="form-control" placeholder="Password..." aria-describedby="basic-addon1">
 			  <button type="submit" ng-click="login(logEmail, logPassword)" class="btn btn-primary">Sign In</button>
 			</div>
+
+			<!-- Register -->
+			<div class="input-group">
+			 	<!-- <p>Register</p> -->
+			  <input type="text" ng-model="regEmail" class="form-control" placeholder="Email..." aria-describedby="basic-addon1">
+			  <input type="text" ng-model="regUserName" class="form-control" placeholder="Choose Username..." aria-describedby="basic-addon1">
+			  <input type="text" ng-model="regPassword" class="form-control" placeholder="Create Password" aria-describedby="basic-addon1">
+			  <button type="submit" ng-click="register(regEmail, regUsername, regPassword)" class="btn btn-success">Register</button>
+			</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+       <!--  <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
-</div> --> 
+</div>
 
 	<!-- Create content Modal -->
-<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -64,18 +73,11 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
-<!-- Register -->
-<div class="input-group">
- 	<!-- <p>Register</p> -->
-  <input type="text" ng-model="regEmail" class="form-control" placeholder="Email..." aria-describedby="basic-addon1">
-  <input type="text" ng-model="regUserName" class="form-control" placeholder="Choose Username..." aria-describedby="basic-addon1">
-  <input type="text" ng-model="regPassword" class="form-control" placeholder="Create Password" aria-describedby="basic-addon1">
-  <button type="submit" ng-click="register(regEmail, regUsername, regPassword)" class="btn btn-success">Register</button>
-</div>
+
 
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#userInfoModal">Small modal</button> -->
 

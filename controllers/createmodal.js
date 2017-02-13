@@ -18,7 +18,7 @@ app.controller('CreateCtrl', function($scope, contentFactory, authFactory) {
 			"thingType" : $scope.thingType,
 			"userName" : $scope.userName,
 			"description" : "",
-			"hasVoted" : $scope.userName
+			"hasVoted" : [$scope.userName]
 		}
 		// console.log("hi")
 		contentFactory.createPost(newPost)

@@ -5,14 +5,13 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 	$scope.login = () => {
 		authFactory.login($scope.logEmail, $scope.logPassword)
 		.then((response) => {
-		})
-		.then(function() {
-			// $scope.getUserInfo();
+			$scope.getUserInfo()
 		})
 	}
 	$scope.register = () => {
 		authFactory.register($scope.regEmail, $scope.regPassword)
 		.then((response) => {
+			$scope.getUserInfo()
 			// $scope.userName = response.displayName
 		})
 		.then((value) => {
@@ -24,13 +23,15 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 			})
 		})
 	}
-	// $scope.getUserInfo = () => {
+	$scope.getUserInfo = () => {
 	authFactory.getUserId()
 	.then((response) => {
-		// console.log(response)
-		$scope.userName = "Hello " + response.displayName
+		$scope.hello = "Hello"
+		$scope.userName = $scope.hello + " " + response.displayName
+		$scope.displayName = response.displayName
 		})
-	// }
+	}
+	$scope.getUserInfo();
 // $scope $apply check out for digesting
 
 	$scope.logout = () => {
@@ -44,29 +45,37 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 	}
 
 	$scope.contentArray = [];
+	$scope.voteArray = []
 	contentFactory.getPosts()
 	.then((value) => {
 		$scope.posts = value.data
+		// $scope.hasVoted = value.data
 
 		for (key in $scope.posts) {
 			$scope.contentArray.push($scope.posts[key])
+			$scope.voteArray.push($scope.posts[key].hasVoted)
 		}
-		// console.log($scope.posts)
+		console.log($scope.voteArray)
 	})
 
 	$scope.vote = (post) => {
-		post.counter++
-		// console.log("voting")
-		let postId;
+		// for (key in $scope.posts) {
+		// 	if ($scope.posts[key].hasVoted === false)
+		// }
+		// 	$scope.$scope.post[key].hasVoted
+			post.counter++
+			console.log($scope.displayName)
+			let postId;
 
 
-		for (key in $scope.posts) {
-			if ($scope.posts[key] === post) {
-				postId = key
+			for (key in $scope.posts) {
+				if ($scope.posts[key] === post) {
+					postId = key
+				}
 			}
+			$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/counter.json`, post.counter)
 		}
-		$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/counter.json`, post.counter)
-	}
+		// let hasVoted = true;
 	// $scope.browseFilter = true;
 	// $scope.filterByType = function(type) {
 	// 	// browseFilter is variable for all browse

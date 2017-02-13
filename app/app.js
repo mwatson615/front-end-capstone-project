@@ -1,7 +1,6 @@
-console.log("app.js")
 
 const app = angular.module('superlativeApp', ['ngRoute'])
-	
+
 	.config(function($routeProvider, $locationProvider) {
 	firebase.initializeApp({
     apiKey: "AIzaSyALvWrpmUrLajhA_WxJPjt9pGkuUYZtBp4",

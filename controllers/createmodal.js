@@ -1,4 +1,3 @@
-console.log("create modal")
 
 app.controller('CreateCtrl', function($scope, contentFactory, authFactory) {
 
@@ -18,7 +17,8 @@ app.controller('CreateCtrl', function($scope, contentFactory, authFactory) {
 			"counter" : 1,
 			"thingType" : $scope.thingType,
 			"userName" : $scope.userName,
-			"description" : ""
+			"description" : "",
+			"hasVoted" : []
 		}
 		// console.log("hi")
 		contentFactory.createPost(newPost)

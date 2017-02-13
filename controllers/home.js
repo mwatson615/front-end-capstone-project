@@ -1,4 +1,3 @@
-// console.log('home ctrl')
 
 app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) {
 
@@ -12,7 +11,6 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 		authFactory.register($scope.regEmail, $scope.regPassword)
 		.then((response) => {
 			$scope.getUserInfo()
-			// $scope.userName = response.displayName
 		})
 		.then((value) => {
 			firebase.auth().currentUser.updateProfile({
@@ -49,13 +47,11 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 	contentFactory.getPosts()
 	.then((value) => {
 		$scope.posts = value.data
-		// $scope.hasVoted = value.data
 
 		for (key in $scope.posts) {
 			$scope.contentArray.push($scope.posts[key])
 
 		}
-		// console.log($scope.voteArray)
 	})
 
 	$scope.vote = (post) => {
@@ -65,26 +61,19 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 					postId = key
 			}
 		}
-			// console.log($scope.posts[key].hasVoted)
 
 			if (post.hasVoted.includes($scope.displayName)) {
-				console.log("you already voted")
+				// console.log("you already voted")
 			} else {
 			post.counter++
 			post.hasVoted.push($scope.displayName)
-				console.log("you just voted")
+				// console.log("you just voted")
 			}
 
 			$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/counter.json`, post.counter)
 			$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/hasVoted.json`, post.hasVoted)
 		}
 
-
-
-			// for (key in $scope.posts) {
-			// 	if ($scope.posts[key] === post) {
-			// 		postId = key
-			// 	}
 	// $scope.browseFilter = true;
 	// $scope.filterByType = function(type) {
 	// 	// browseFilter is variable for all browse

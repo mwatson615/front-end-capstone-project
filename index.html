@@ -14,32 +14,20 @@
 			    <!-- Brand and toggle get grouped for better mobile display -->
 			    <div class="navbar-header">
 			      <a class="navbar-brand brand">Superlative</a>
-			      <button class="btn btn-default navbar-btn" data-toggle="modal" data-target="#userInfoModal">Sign In</button>
-			      <button class="btn btn-default navbar-btn">Sign Out</button>
-			      <h2>{{userName}}</h2>
+			      <!-- <button class="btn btn-default navbar-btn" data-toggle="modal" data-target="#userInfoModal">Sign In</button>
+			      <button class="btn btn-default navbar-btn">Sign Out</button> -->
+			      <!-- <h2>{{userName}}</h2> -->
 			    </div>
 
-			    <!-- Collect the nav links, forms, and other content for toggling -->
 		    	<div class="navbar-right">
 			      	<ul class="nav nav-pills nav-justified">
-						  <li role="presentation" class="active" data-toggle="modal" data-target="#userInfoModal"><a href="#/">Log In/Register</a></li>
+						  <li role="presentation"><a href="#/">Home</a></li>
 						  <li role="presentation"><a href="#/myposts">My Posts</a></li>
 						  <li role="presentation"><a href="#/create">Create Posts</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-
-		<!-- Small modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
-
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      ...
-    </div>
-  </div>
-</div> -->
 
 		<div ng-view>
 		</div>

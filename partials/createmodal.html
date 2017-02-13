@@ -1,4 +1,4 @@
-<!-- <h1>create</h1> -->
+<h1>Create a Superlative!</h1>
 
 <div class="input-group">
 	<select ng-model="thingType">
@@ -12,11 +12,11 @@
 	</select>
 	<input type="text" class="form-control" ng-model="category" placeholder="Guitarist, Lizard, City...">
 	<input type="text" ng-model="name" class="form-control" placeholder="Name...">
-	<!-- <img src="{{imgUrl}}"> -->
+	<img src="{{imgUrl}}">
 	<input ng-model="imgUrl" type="text" class="form-control" placeholder="Give an image Url...">
 </div>
 
 <!-- create button -->
 <div>
-	<button ng-click="createPost()" class="btn btn-primary">Create</button>
+	<a type="button" ng-click="createPost()" href="#/" class="btn btn-primary">Create</a>
 </div>

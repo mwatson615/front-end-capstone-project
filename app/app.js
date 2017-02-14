@@ -34,7 +34,13 @@ const app = angular.module('superlativeApp', ['ngRoute'])
 	})
 	.when('/create', {
 		controller: 'CreateCtrl',
-		templateUrl: 'partials/createmodal.html'
+		templateUrl: 'partials/createmodal.html',
+		resolve: {
+			user (authFactory, $location) {
+				return authFactory.getUserId()
+				.catch(() => $location.url('/'))
+			}
+		}
 	})
 	.otherwise({
 		redirectTo: '/'

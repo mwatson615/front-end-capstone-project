@@ -1,12 +1,60 @@
+
+
 body {
+	font-family: 'Playfair Display', serif;
 	text-align: center;
 	background: #6a81a8;
 }
 
-/*.brand {
-	color: red;
-}*/
+.row-centered {
+	text-align: center;
+}
+
+.col-centered {
+	display: inline-block;
+	float: none;
+	text-align: left;
+	margin-right: -4px;
+}
+
+.posts {
+	border: solid 1px black;
+	height: 190px;
+	background: #ccd5e5
+	/*margin-right: 10px;*/
+	/*float: right;*/
+}
 
 .searchInput {
 	margin-top: 25px;
+}
+
+.postImg {
+	height: 140px;
+	max-width: 186px;
+}
+
+.shadow {
+  -webkit-box-shadow: 3px 3px 2px 6px #000;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 3px 3px 2px 6px #000;  /* Firefox 3.5 - 3.6 */
+  box-shadow: 3px 3px 2px 2px #494b4f;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+/*.shadow {
+   -moz-box-shadow: inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow: inset 0 0 10px #000000;
+}*/
+
+/*Media Queries*/
+@media (max-width: 600px) {
+	.pull-left {
+		float: none;
+	}
+	.pull-right {
+		float: none;
+	}
+	.posts {
+		height: 220px;
+	}
 }

@@ -3,7 +3,15 @@
 body {
 	font-family: 'Playfair Display', serif;
 	text-align: center;
-	background: #6a81a8;
+	background: radial-gradient(circle, #a0b9d6, #bad4f2, #c4d8ef);
+}
+
+.navbar {
+	background: radial-gradient(circle, #edeff2, #cbcfd6, #ccd7ea)
+}
+
+.second {
+	letter-spacing: 10px;
 }
 
 .row-centered {

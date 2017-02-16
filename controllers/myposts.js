@@ -1,7 +1,5 @@
-// console.log('my posts ctrl')
 
-app.controller('MyPostsCtrl', function($scope, authFactory, $location, contentFactory) {
-
+app.controller('MyPostsCtrl', function($scope, authFactory, $location, contentFactory, $http) {
 
 	authFactory.getUserId()
 	.then((response) => {
@@ -10,6 +8,7 @@ app.controller('MyPostsCtrl', function($scope, authFactory, $location, contentFa
 	})
 
 	$scope.myPostArray = []
+	$scope.editMode = false
 
 	contentFactory.getMyPosts()
 	.then((response) => {
@@ -19,6 +18,15 @@ app.controller('MyPostsCtrl', function($scope, authFactory, $location, contentFa
 				$scope.myPostArray.push($scope.myPosts[key])
 			}
 		}
-
 	})
+
+	$scope.updateName = (post) => {
+		// $scope.editMode = false;
+		for (key in $scope.myPosts) {
+			if ($scope.myPosts[key] === post) {
+				postId = key
+			}
+		}
+			$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/category.json`, JSON.stringify(post.category))
+		}
 })

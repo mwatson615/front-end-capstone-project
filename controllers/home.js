@@ -5,6 +5,8 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 		authFactory.login($scope.logEmail, $scope.logPassword)
 		.then((response) => {
 			$scope.getUserInfo()
+			$scope.logEmail = ''
+			$scope.logPassword = ''
 		})
 	}
 	$scope.register = () => {
@@ -39,6 +41,7 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 		})
 		.then(function() {
 			$scope.userName = ''
+			$scope.displayName = null
 		})
 	}
 
@@ -54,6 +57,17 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 		}
 	})
 
+	// ng-show function for user / non-user view
+	// $scope.isUser = () => {
+	// 	if ($scope.displayName === null) {
+	// 		// console.log("false")
+	// 		return false
+	// 	} else {
+	// 		// console.log("true")
+	// 		return true
+	// 	}
+	// }
+
 	$scope.vote = (post) => {
 		let postId;
 		for (key in $scope.posts) {
@@ -62,8 +76,8 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 			}
 		}
 
-			if (post.hasVoted.includes($scope.displayName)) {
-				// console.log("you already voted")
+			if (post.hasVoted.includes($scope.displayName) || $scope.displayName === null) {
+				return;
 			} else {
 			post.counter++
 			post.hasVoted.push($scope.displayName)

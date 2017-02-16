@@ -3,9 +3,9 @@
 	<h2>{{userName}}</h2>
 
 <!-- login/register -->
-	<button type="button" data-toggle="modal" data-target="#userInfoModal" class="btn btn-default">Log In/Register</button>
+	<button type="button" ng-show="!displayName" data-toggle="modal" data-target="#userInfoModal" class="btn btn-default">Log In/Register</button>
 <!-- logout button -->
-	<button type="button" ng-click="logout()" class="btn btn-default">Log Out</button>
+	<button type="button" ng-show="displayName" ng-click="logout()" class="btn btn-default">Log Out</button>
 
 
 <!-- Login/register Modal -->
@@ -20,17 +20,17 @@
         <!-- <! login -->
 			<div class="input-group col-xs-5 pull-left">
 			 	<p>Login</p>
-			  <input type="text" ng-model="logEmail" class="form-control" placeholder="Email..." aria-describedby="basic-addon1">
-			  <input type="text" ng-model="logPassword" class="form-control" placeholder="Password..." aria-describedby="basic-addon1">
+			  <input type="email" ng-model="logEmail" class="form-control" placeholder="Email..." aria-describedby="basic-addon1">
+			  <input type="password" ng-model="logPassword" class="form-control" placeholder="Password..." aria-describedby="basic-addon1">
 			  <button type="submit" ng-click="login(logEmail, logPassword)" class="btn btn-primary" data-dismiss="modal">Sign In</button>
 			</div>
 
 			<!-- Register -->
 			<div class="input-group col-xs-5 pull-right">
 			 	<p>Register</p>
-			  <input type="text" ng-model="regEmail" class="form-control" placeholder="Email..." aria-describedby="basic-addon1">
+			  <input type="email" ng-model="regEmail" class="form-control" placeholder="Email..." aria-describedby="basic-addon1">
 			  <input type="text" ng-model="regUserName" class="form-control" placeholder="Choose Username..." aria-describedby="basic-addon1">
-			  <input type="text" ng-model="regPassword" class="form-control" placeholder="Create Password" aria-describedby="basic-addon1">
+			  <input type="password" ng-model="regPassword" class="form-control" placeholder="Create Password" aria-describedby="basic-addon1">
 			  <button type="submit" ng-click="register(regEmail, regUsername, regPassword)" class="btn btn-success" data-dismiss="modal">Register</button>
 			</div>
       </div>
@@ -60,12 +60,12 @@
 	  <div class="media posts col-md-6 shadow" ng-repeat="post in contentArray | filter: {$:searchInput}">
 		    <div class="media-left media-middle">
 		    	<p>Posted by {{post.userName}}</p>
-		      <img class="media-object postImg" ng-src="{{post.imgUrl}}" alt="{{post.name}}">
+		      <img class="media-object postImg img-rounded" ng-href="{{post.imgUrl}}" ng-src="{{post.imgUrl}}" alt="{{post.name}}">
 		    </div>
 		      <div class="media-body media-middle">
 		        <h3 class="media-heading">{{post.superlative}} {{post.category}}</h3>
 		        <h4>{{post.name}}</h4>
-		        <button ng-click="vote(post)" class="btn btn-default btn-sm glyphicon glyphicon-thumbs-up" role="button"></button>
+		        <button ng-show="displayName" ng-click="vote(post)" class="btn btn-default btn-sm glyphicon glyphicon-thumbs-up" role="button"></button>
 		        <h5>{{post.counter}}</h5>
 		      </div>
 	    </div>

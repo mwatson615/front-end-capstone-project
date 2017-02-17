@@ -48,6 +48,13 @@ body {
   box-shadow: 3px 3px 2px 2px #494b4f;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
+.imgPreview {
+	display: block;
+	margin: auto;
+	max-width: 180px;
+	max-height: 180px;
+}
+
 /*.shadow {
    -moz-box-shadow: inset 0 0 10px #000000;
    -webkit-box-shadow: inset 0 0 10px #000000;

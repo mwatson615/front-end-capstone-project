@@ -1,5 +1,5 @@
 
-app.controller('CreateCtrl', function($scope, contentFactory, authFactory) {
+app.controller('CreateCtrl', function($scope, contentFactory, authFactory, $location) {
 
 	authFactory.getUserId()
 	.then((response) => {
@@ -22,6 +22,7 @@ app.controller('CreateCtrl', function($scope, contentFactory, authFactory) {
 		}
 		// console.log("hi")
 		contentFactory.createPost(newPost)
+		$location.url('/')
 	}
 
 

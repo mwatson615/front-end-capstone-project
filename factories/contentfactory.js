@@ -13,6 +13,7 @@ app.factory('contentFactory', ($http, $q) => {
 				  // Handle Errors here.
 				  var errorCode = error.code;
 				  var errorMessage = error.message;
+				  alert(error.code + " : " + error.message)
 			})
 		},
 		getPosts : () => {
@@ -25,6 +26,7 @@ app.factory('contentFactory', ($http, $q) => {
 				  // Handle Errors here.
 				  var errorCode = error.code;
 				  var errorMessage = error.message;
+				  alert(error.code + " : " + error.message)
 			})
 		},
 		getMyPosts : () => {
@@ -33,6 +35,7 @@ app.factory('contentFactory', ($http, $q) => {
 				  // Handle Errors here.
 				  var errorCode = error.code;
 				  var errorMessage = error.message;
+				  alert(error.code + " : " + error.message)
 			})
 		}
 	}

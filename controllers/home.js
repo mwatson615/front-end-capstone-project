@@ -1,6 +1,18 @@
 
 app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) {
 
+	$scope.contentArray = [];
+	$scope.voteArray = []
+	contentFactory.getPosts()
+	.then((value) => {
+		$scope.posts = value.data
+
+		for (key in $scope.posts) {
+			$scope.contentArray.push($scope.posts[key])
+
+		}
+	})
+
 	$scope.login = () => {
 		authFactory.login($scope.logEmail, $scope.logPassword)
 		.then((response) => {
@@ -45,28 +57,17 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 		})
 	}
 
-	$scope.contentArray = [];
-	$scope.voteArray = []
-	contentFactory.getPosts()
-	.then((value) => {
-		$scope.posts = value.data
+	// $scope.contentArray = [];
+	// $scope.voteArray = []
+	// contentFactory.getPosts()
+	// .then((value) => {
+	// 	$scope.posts = value.data
 
-		for (key in $scope.posts) {
-			$scope.contentArray.push($scope.posts[key])
+	// 	for (key in $scope.posts) {
+	// 		$scope.contentArray.push($scope.posts[key])
 
-		}
-	})
-
-	// ng-show function for user / non-user view
-	// $scope.isUser = () => {
-	// 	if ($scope.displayName === null) {
-	// 		// console.log("false")
-	// 		return false
-	// 	} else {
-	// 		// console.log("true")
-	// 		return true
 	// 	}
-	// }
+	// })
 
 	$scope.vote = (post) => {
 		let postId;

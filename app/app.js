@@ -20,6 +20,10 @@ const app = angular.module('superlativeApp', ['ngRoute'])
 				return authFactory.getUserId()
 				.catch(() => $location.url('/'))
 			}
+		},
+			results (contentFactory, $location) {
+			return contentFactory.getPosts()
+			.catch(() => $location.url('/'))
 		}
 	})
 	.when('/myposts', {

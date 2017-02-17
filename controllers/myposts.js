@@ -29,4 +29,14 @@ app.controller('MyPostsCtrl', function($scope, authFactory, $location, contentFa
 		}
 			$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/category.json`, JSON.stringify(post.category))
 		}
+
+	$scope.deletePost = (post) => {
+		for (key in $scope.myPosts) {
+			if ($scope.myPosts[key] === post) {
+				postId = key
+			}
+		}
+		console.log(postId)
+		$http.delete(`https://superlative-ac493.firebaseio.com/posts/${postId}.json`)
+	}
 })

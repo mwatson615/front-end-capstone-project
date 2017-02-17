@@ -1,0 +1,23 @@
+<h1>Create a Superlative!</h1>
+<div class="container">
+<div class="input-group col-xs-6 col-xs-offset-3">
+	<!-- <select ng-model="thingType">
+		<option>People</option>
+		<option>Place</option>
+		<option>Thing</option>
+	</select><br> -->
+	<select ng-model="superlative">
+		<option>Greatest</option>
+		<option>Worst</option>
+	</select>
+	<input type="text" class="form-control" ng-model="category" placeholder="Guitarist, Lizard, City..." maxlength="22">
+	<input type="text" ng-model="name" class="form-control" placeholder="Name..." maxlength="22">
+	<img class="imgPreview" ng-src="{{imgUrl}}">
+	<input ng-model="imgUrl" type="text" class="form-control" placeholder="Give an image Url...">
+</div>
+
+<!-- create button -->
+<div>
+	<a type="button" ng-click="createPost()" class="btn btn-primary">Create</a>
+</div>
+</div>

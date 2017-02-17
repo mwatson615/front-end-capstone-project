@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Superlative Capstone Project</title>
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app="superlativeApp">
+	<div class="container-fluid">
+
+		<nav class="navbar navbar-default navbar-static-top">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <a class="navbar-brand brand">Superlative</a>
+			      <a class="navbar-brand brand second">/sʊˈpɜr·lə·t̬ɪv/</a>
+			      <!-- <button class="btn btn-default navbar-btn" data-toggle="modal" data-target="#userInfoModal">Sign In</button>
+			      <button class="btn btn-default navbar-btn">Sign Out</button> -->
+			      <!-- <h2>{{userName}}</h2> -->
+			    </div>
+
+		    	<div class="navbar-right">
+			      	<ul class="nav nav-pills nav-justified">
+						  <li role="presentation"><a href="#/">Home</a></li>
+						  <li role="presentation"><a href="#/myposts">My Posts</a></li>
+						  <li role="presentation"><a href="#/create">Create Posts</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div ng-view>
+		</div>
+	</div>
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/bower_components/angular-route/angular-route.min.js"></script>
+	<script src="/bower_components/firebase/firebase.js"></script>
+	<script src="/app/app.js"></script>
+	<script src="/factories/authFactory.js"></script>
+	<script src="/factories/contentfactory.js"></script>
+	<script src="/controllers/home.js"></script>
+	<script src="/controllers/myposts.js"></script>
+	<script src="/controllers/createmodal.js"></script>
+</body>
+</html>

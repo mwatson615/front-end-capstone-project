@@ -6,7 +6,6 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http, 
 	contentFactory.getPosts()
 	.then((value) => {
 		$scope.posts = value.data
-		
 
 		for (key in $scope.posts) {
 			$scope.contentArray.push($scope.posts[key])

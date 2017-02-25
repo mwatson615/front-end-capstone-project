@@ -37,6 +37,10 @@ app.controller('MyPostsCtrl', function($scope, authFactory, $location, contentFa
 			}
 		}
 		$http.delete(`https://superlative-ac493.firebaseio.com/posts/${postId}.json`, post)
-		$scope.myPostArray.splice($scope.myPosts[key], 1)
+		for (key in $scope.myPostArray) {
+			if ($scope.myPostArray[key] === post) {
+			$scope.myPostArray.splice(key, 1)
+			}
+		}
 	}
 })

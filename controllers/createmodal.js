@@ -22,7 +22,9 @@ app.controller('CreateCtrl', function($scope, contentFactory, authFactory, $loca
 		}
 		// console.log("hi")
 		contentFactory.createPost(newPost)
-		$location.url('/')
+		// contentFactory.getPosts()
+		// .then()
+		// $location.url("/")
 	}
 
 

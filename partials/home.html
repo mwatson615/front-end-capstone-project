@@ -57,7 +57,7 @@
 	</div> -->
 </div>
 
-	  <div ng-model="contentArray" class="media posts col-md-6 shadow" ng-repeat="post in contentArray | filter: {$:searchInput}">
+	  <div class="media posts col-md-6 shadow" ng-repeat="post in contentArray | filter: {$:searchInput}">
 		    <div class="media-left media-middle">
 		    	<p>Posted by {{post.userName}}</p>
 		      <a ng-href="{{post.imgUrl}}"><img class="media-object postImg img-rounded" ng-src="{{post.imgUrl}}" alt="{{post.name}}"></a>

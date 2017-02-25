@@ -7,7 +7,7 @@ app.factory('contentFactory', ($http, $q, $location, $route) => {
 		createPost : (newPost) => {
 			return $http.post('https://superlative-ac493.firebaseio.com/posts.json', JSON.stringify(newPost))
 			.then(function(value) {
-				console.log(value)
+				return value
 			})
 			.catch(function(error) {
 				  // Handle Errors here.

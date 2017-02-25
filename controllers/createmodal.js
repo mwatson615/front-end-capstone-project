@@ -22,6 +22,16 @@ app.controller('CreateCtrl', function($scope, contentFactory, authFactory, $loca
 		}
 		// console.log("hi")
 		contentFactory.createPost(newPost)
+		.then((results) => {
+			console.log(results)
+			// if (results.status === 200) {
+			// 	$scope.successMessage = true
+				// setTimeout(() => {
+					// console.log("hi there")
+				$location.url("/")
+				// }, 2500)
+			// }
+		})
 		// contentFactory.getPosts()
 		// .then()
 		// $location.url("/")

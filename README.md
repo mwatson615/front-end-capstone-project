@@ -1,3 +1,6 @@
+
+
+
 # front-end-capstone-project
 
 Moqups link: https://app.moqups.com/m.watson.tn@gmail.com/SLwW6i6H0Y/view
@@ -19,5 +22,3 @@ Planning time is inversely proportional to build time. Extra planning on the fro
 Angular is very powerful and fairly simple to use for this purpose. 
 filter: {$:searchModel} is a great shortcut for implementing a search all
 Problems of asynchronicity and changing partials based on events are easily solved with promise manipulation
-
-Screen Shot 2017-02-27 at 3.23.12 PM

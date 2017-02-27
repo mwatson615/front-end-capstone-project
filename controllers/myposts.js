@@ -1,5 +1,6 @@
 
-app.controller('MyPostsCtrl', function($scope, authFactory, $location, contentFactory, $http) {
+app.controller('MyPostsCtrl', function($scope, authFactory, $location, contentFactory, $http, $route) {
+
 
 	authFactory.getUserId()
 	.then((response) => {
@@ -21,7 +22,6 @@ app.controller('MyPostsCtrl', function($scope, authFactory, $location, contentFa
 	})
 
 	$scope.updateName = (post) => {
-		// $scope.editMode = false;
 		for (key in $scope.myPosts) {
 			if ($scope.myPosts[key] === post) {
 				postId = key
@@ -36,7 +36,11 @@ app.controller('MyPostsCtrl', function($scope, authFactory, $location, contentFa
 				postId = key
 			}
 		}
-		console.log(postId)
-		$http.delete(`https://superlative-ac493.firebaseio.com/posts/${postId}.json`)
+		$http.delete(`https://superlative-ac493.firebaseio.com/posts/${postId}.json`, post)
+		for (key in $scope.myPostArray) {
+			if ($scope.myPostArray[key] === post) {
+			$scope.myPostArray.splice(key, 1)
+			}
+		}
 	}
 })

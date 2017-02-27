@@ -1,7 +1,7 @@
 <h2>Posts by {{userName}}</h2>
 
 <!-- posts -->
-	  <div ng-model="myPosts" class="media col-md-6 posts shadow" ng-repeat="post in myPostArray">
+	  <div ng-model="myPosts" class="media col-md-6 posts shadow" ng-repeat="post in myPostArray | orderBy:'counter': reverse=true">
 	    <div class="media-object media-left media-middle">
 	      <img class="postImg img-rounded" ng-src="{{post.imgUrl}}" alt="{{post.name}}">
 	      </div>

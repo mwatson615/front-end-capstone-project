@@ -3,9 +3,7 @@ app.controller('CreateCtrl', function($scope, contentFactory, authFactory, $loca
 
 	authFactory.getUserId()
 	.then((response) => {
-		// console.log(response.displayName)
 	$scope.userName = response.displayName
-	// $scope.userEmail = response.email
 	})
 
 	$scope.createPost = () => {
@@ -20,9 +18,10 @@ app.controller('CreateCtrl', function($scope, contentFactory, authFactory, $loca
 			"description" : "",
 			"hasVoted" : [$scope.userName]
 		}
-		// console.log("hi")
 		contentFactory.createPost(newPost)
-		$location.url('/')
+		.then((results) => {
+		$location.url("/")
+		})
 	}
 
 

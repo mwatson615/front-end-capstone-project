@@ -1,5 +1,5 @@
 
-app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) {
+app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http, $route) {
 
 	$scope.contentArray = [];
 	$scope.voteArray = []
@@ -56,18 +56,6 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http) 
 			$scope.displayName = null
 		})
 	}
-
-	// $scope.contentArray = [];
-	// $scope.voteArray = []
-	// contentFactory.getPosts()
-	// .then((value) => {
-	// 	$scope.posts = value.data
-
-	// 	for (key in $scope.posts) {
-	// 		$scope.contentArray.push($scope.posts[key])
-
-	// 	}
-	// })
 
 	$scope.vote = (post) => {
 		let postId;

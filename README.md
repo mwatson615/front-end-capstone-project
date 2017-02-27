@@ -22,3 +22,5 @@ Planning time is inversely proportional to build time. Extra planning on the fro
 Angular is very powerful and fairly simple to use for this purpose. 
 filter: {$:searchModel} is a great shortcut for implementing a search all
 Problems of asynchronicity and changing partials based on events are easily solved with promise manipulation
+
+![alt tag] (https://raw.githubusercontent.com/mwatson615/front-end-capstone-project/master/Screen%20Shot%202017-02-27%20at%203.23.12%20PM.png)

@@ -7,6 +7,8 @@ Moqups link: https://app.moqups.com/m.watson.tn@gmail.com/SLwW6i6H0Y/view
 
 Trello link: https://trello.com/b/OGe8sIzg
 
+Github pages link: https://mwatson615.github.io/front-end-capstone-project/
+
 Concept:
 Superlative is intended to settle disputes over who or what is the greatest or worst at doing something. It draws on the concepts of Urban Dictionary and Guinness Book of World Records and relies on no factual information as facts cannot be disputed. This allows users to, for example, list themselves as the greatest guitarist, or their pets as the greatest dogs or cats. 
 

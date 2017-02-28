@@ -62,6 +62,14 @@ body {
 	/*float: right;*/
 }
 
+.postHeader {
+	display: inline-block;
+}
+
+.secondPostHeader {
+	margin-left: 3px;
+}
+
 .searchInput {
 	margin-top: 25px;
 	margin-bottom: 10px;

@@ -44,7 +44,6 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http, 
 		})
 	}
 	$scope.getUserInfo();
-// $scope $apply check out for digesting
 
 	$scope.logout = () => {
 		authFactory
@@ -70,34 +69,9 @@ app.controller('HomeCtrl', function($scope, contentFactory, authFactory, $http, 
 			} else {
 			post.counter++
 			post.hasVoted.push($scope.displayName)
-				// console.log("you just voted")
 			}
 
 			$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/counter.json`, post.counter)
 			$http.put(`https://superlative-ac493.firebaseio.com/posts/${postId}/hasVoted.json`, post.hasVoted)
 		}
-
-	// $scope.browseFilter = true;
-	// $scope.filterByType = function(type) {
-	// 	// browseFilter is variable for all browse
-	// 	$scope.browseFilter = type;
-	// 	// if (type === 'people')
-	// 	// 	return
-	// console.log(type)
-	// }
-	// $scope.isType = function() {
-
-	// }
-
-	// $scope.determineType = function(type) {
-	// 	$scope.isType = type;
-	// 	// if (type === 'People') {
-	// 	// 	$scope.isType
-	// 	// } else if (type === 'Place') {
-	// 	// 	return 'Place';
-	// 	// } else if (type === 'Thing') {
-	// 	// 	return;
-	// 	// }
-	// }
-
 })
